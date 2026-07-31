@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #005fff33 transparent;
+}
+html {
+  /* Stop the browser from fighting Lenis */
+  scroll-behavior: auto !important;
+}
+
+body {
+  background-color: #FBFCFE;
+  color: #05070D;
+}
+
+::selection {
+  background: #f1f1f1;
+  color: #005FFF;
+}
+
+
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Visible keyboard focus, always */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #005FFF;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container-px {
+  @apply px-6 md:px-10 lg:px-16;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.mask-fade-b {
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+@keyframes shimmer {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  100% { transform: translateX(150%) skewX(-20deg); }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}
+
+.glass-inset {
+  box-shadow: inset 1px 1px 0px rgba(255, 255, 255, 0.4), inset -1px -1px 0px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-wave {
+  animation: wave 4s linear infinite;
+}
+
+/* Base style for the liquid glass container to match your provided CSS */
+.glass-base {
+  box-shadow: inset 2px 2px 0px -2px rgba(255, 255, 255, 0.7), inset 0 0 3px 1px rgba(255, 255, 255, 0.7);
+}
+
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
+          100% { transform: translateY(0px); }
+        }
+        .animate-float {
+          animation: float 5s ease-in-out infinite;
+        }
+
+                @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+
+@keyframes logo-x-draw {
+  from { stroke-dashoffset: 1; opacity: 0; }
+  to { stroke-dashoffset: 0; opacity: 1; }
+}
+
+.logo-x-stroke {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: logo-x-draw 1.2s 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes watermark-fade {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 0.07; transform: scale(1); }
+}
+
+.animate-watermark-fade {
+  animation: watermark-fade 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes notfound-ripple {
+  0% { r: 40; stroke-opacity: 0; }
+  15% { stroke-opacity: 1; }
+  100% { r: 100; stroke-opacity: 0; }
+}
+
+.animate-notfound-ripple {
+  animation: notfound-ripple 4s ease-out infinite;
+  transform-origin: center;
+}
