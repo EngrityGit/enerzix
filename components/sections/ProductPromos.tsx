@@ -11,13 +11,13 @@ const PROMOS = [
   {
     title: "Clean & Refreshing",
     desc: "Purified through reverse osmosis and treated with ozone to deliver a clean, refreshing taste for everyday hydration.",
-    img: "/products/enerzix_lifestyle1.png",
+    img: "/products/enerzix_lifestyle1.webp",
     label: "Purified Water"
   },
   {
     title: "Proudly Canadian",
     desc: "Locally sourced and bottled in British Columbia, supporting dependable hydration for Canadian homes, workplaces, and communities.",
-    img: "/products/enerzix_lifestyle2.png",
+    img: "/products/enerzix_lifestyle2.webp",
     label: "Locally Bottled"
   }
 ];

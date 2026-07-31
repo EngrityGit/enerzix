@@ -25,17 +25,6 @@ export default function AboutHero() {
         .from(".hero-text", { opacity: 0, y: 15 }, "-=0.8")
         .from(".hero-button", { opacity: 0, y: 10 }, "-=0.8");
 
-      // 2. Scroll-driven Parallax Animations
-      // Header fades out as we scroll
-      gsap.to(headerRef.current, {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "50% top",
-          scrub: true,
-        }
-      });
 
       // Left Image Parallax (-100px)
       gsap.to(leftImgRef.current, {
@@ -112,7 +101,7 @@ export default function AboutHero() {
             className="absolute left-0 md:left-[2%] w-[33%] aspect-[3/4] rounded-[20px] md:rounded-[30px] overflow-hidden border-4 md:border-[10px] border-white shadow-2xl z-10 -rotate-6"
           >
             <Image 
-              src="/products/enerzix_lifestyle2.png" 
+              src="/products/enerzix_lifestyle2.webp" 
               alt="Lifestyle 2" 
               fill 
               className="object-cover" 
@@ -126,7 +115,7 @@ export default function AboutHero() {
             className="absolute right-0 md:right-[2%] w-[33%] aspect-[3/4] rounded-[20px] md:rounded-[30px] overflow-hidden border-4 md:border-[10px] border-white shadow-2xl z-10 rotate-6"
           >
             <Image 
-              src="/products/enerzix_lifestyle3.png" 
+              src="/products/enerzix_lifestyle3.webp" 
               alt="Lifestyle 3" 
               fill 
               className="object-cover" 
@@ -140,7 +129,7 @@ export default function AboutHero() {
             className="relative w-[52%] md:w-[48%] aspect-[4/5] rounded-[25px] md:rounded-[40px] overflow-hidden border-[6px] md:border-[14px] border-white shadow-[0_40px_80px_-15px_rgba(0,0,0,0.15)] z-20"
           >
             <Image 
-              src="/products/enerzix_lifestyle1.png" 
+              src="/products/enerzix_lifestyle1.webp" 
               alt="Main Lifestyle" 
               fill 
               className="object-cover" 

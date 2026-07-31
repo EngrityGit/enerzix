@@ -1,7 +1,6 @@
 'use client';
 
-import { useLayoutEffect, useRef } from 'react';
-import { gsap } from '@/lib/gsap';
+import {useRef } from 'react';
 import Container from '@/components/ui/Container';
 import LiquidButton from '@/components/ui/LiquidButton';
 

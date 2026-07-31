@@ -14,20 +14,6 @@ export default function Origins() {
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       
-      // 1. Reveal Animations (Replacing framer-motion's fadeIn)
-      // We target all children with the class 'reveal'
-      gsap.from(".reveal", {
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.15, // Staggers the appearance of each element
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%", // Starts when the top of the section is 80% down the viewport
-          toggleActions: "play none none reverse"
-        }
-      });
 
       // 2. Parallax Image Effect
       // This creates a smooth parallax on the image inside its container
@@ -88,7 +74,7 @@ export default function Origins() {
             >
               <div ref={imageRef} className="absolute inset-0 -top-[20%] h-[140%] w-full">
                 <Image 
-                  src="/products/enerzix_lifestyle.png" 
+                  src="/products/enerzix_lifestyle.webp" 
                   alt="The Pristine Canadian Wilderness"
                   fill
                   className="object-cover"

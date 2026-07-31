@@ -87,8 +87,8 @@ export default function Hero() {
         className="relative z-20 w-full max-w-[420px] h-[55vh] md:h-[65vh] lg:h-[75vh] flex items-center justify-center mt-10 will-change-transform"
       >
         <Image
-          src="/products/enerzix_hero.png" 
-          alt="Enerzix Premium Glacial Water"
+          src="/products/enerzix_hero.webp" 
+          alt="Enerzix Pure & Clean Water"
           fill
           priority
           className="object-contain drop-shadow-[0_40px_80px_rgba(0,95,255,0.15)]"

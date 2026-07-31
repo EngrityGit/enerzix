@@ -1,86 +1,67 @@
 'use client';
 
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from '@/lib/gsap';
 
+// 1. MOVE THESE TO /public/logos/ AND CONVERT TO WEBP
 const RETAILERS = [
-  {
-    name: "Chevron",
-    logo: "https://giantoil.com/wp-content/uploads/4938f79f8d27413593e918b4f80d65ac.png",
-    width: 140,
-  },
-  {
-    name: "Panorama Indian Lounge",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKWJXx9Vmij1hofUBJG6M6tLV36QJDXBQz5KyGq0YUlvGo0UfeFxOMdugd&s=10",
-    width: 160,
-  },
-  {
-    name: "7-Eleven",
-    logo: "https://1000logos.net/wp-content/uploads/2020/09/7-Eleven-Logo.png",
-    width: 90,
-  },
-  {
-    name: "Petro Canada",
-    logo: "https://www.liblogo.com/img-logo/pe4227pbec-petro-canada-logo-petro-canada-logo-png-transparent-amp-svg-vector-freebie-supply.png",
-    width: 160,
-  },
-  {
-    name: "Shell",
-    logo: "https://logos-world.net/wp-content/uploads/2020/11/Shell-Logo-1971-1995.png",
-    width: 100,
-  },
+  { name: "Chevron", logo: "/customers/chevron.svg", width: 120 },
+  { name: "Panorama", logo: "/customers/panarama.png", width: 140 },
+  { name: "7-Eleven", logo: "/customers/7eleven.svg", width: 80 },
+  { name: "Petro Canada", logo: "/customers/petro.svg", width: 140 },
+  { name: "Shell", logo: "/customers/shell.svg", width: 90 },
 ];
 
-// Double the items for a seamless loop
-const MARQUEE_ITEMS = [...RETAILERS, ...RETAILERS];
+const MARQUEE_ITEMS = [...RETAILERS, ...RETAILERS, ...RETAILERS]; // Triple for smoother loop
 
 export default function RetailerMarquee() {
   const sectionRef = useRef<HTMLElement>(null);
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      // Minimal GSAP for entrance only
+  useEffect(() => {
+    const ctx = gsap.context(() => {
       gsap.from(sectionRef.current, {
         opacity: 0,
-        y: 20,
-        duration: 1,
+        y: 15,
+        duration: 0.8,
         ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 90%",
+          start: "top 95%",
         }
       });
-    }, sectionRef);
+    });
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#F8FAFC] py-12 md:py-20 overflow-hidden border-t border-slate-100">
-      
-
-      <div className="flex flex-col lg:flex-row items-center w-full px-6 md:px-12 gap-10">
+    <section 
+      ref={sectionRef} 
+      className="w-full bg-[#F8FAFC] py-10 md:py-16 overflow-hidden border-y border-slate-100"
+    >
+      <div className="flex flex-col lg:flex-row items-center w-full px-6 md:px-12 gap-8">
         
-        {/* Left Side: Header */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 z-20 bg-[#F8FAFC] pr-4">
           <h2 className="text-[10px] font-black text-slate-400 tracking-[0.3em] uppercase whitespace-nowrap">
             Available <span className="text-[#005FFF]">At</span>
           </h2>
         </div>
 
-        {/* Right Side: Marquee Area */}
-        <div className="relative flex-1 w-full overflow-hidden">
-          
-          {/* Edge Blurs */}
-          <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
+        <div className="relative flex-1 w-full overflow-hidden mask-fade">
+          {/* Edge Blurs - Fixed using CSS Mask for better performance than many divs */}
+          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#F8FAFC] to-transparent z-10 pointer-events-none" />
 
-          {/* Scrolling Container */}
-          <div className="flex items-center w-max animate-marquee">
+          {/* 
+            ANIMATION OPTIMIZATION: 
+            - Use will-change-transform to trigger GPU
+            - Use animate-marquee (defined in tailwind.config)
+          */}
+          <div className="flex items-center w-max animate-marquee will-change-transform">
             {MARQUEE_ITEMS.map((retailer, i) => (
               <div 
                 key={i} 
-                className="relative h-10 md:h-12 mx-8 md:mx-14 flex-shrink-0 grayscale opacity-40 hover:opacity-100 hover:grayscale-0 transition-all duration-500 ease-in-out cursor-default"
+                className="relative h-8 md:h-10 mx-8 md:mx-12 flex-shrink-0 grayscale opacity-40 hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-default"
                 style={{ width: retailer.width }}
               >
                 <Image
@@ -88,7 +69,8 @@ export default function RetailerMarquee() {
                   alt={retailer.name}
                   fill
                   className="object-contain"
-                  unoptimized
+                  sizes="(max-width: 768px) 100px, 150px"
+                  priority // Ensures logos are ready immediately
                 />
               </div>
             ))}

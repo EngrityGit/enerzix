@@ -100,7 +100,7 @@ export default function Hero500ml() {
               className="relative w-[300px] h-[500px] md:w-[450px] md:h-[650px]"
             >
               <Image
-                src="/products/enerzix_500ml.png"
+                src="/products/enerzix_500ml.webp"
                 alt="Enerzix 500 mL Purified Water"
                 fill
                 priority

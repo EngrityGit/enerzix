@@ -143,10 +143,10 @@ export default function Navbar() {
                         >
                           <div className="relative w-full aspect-square mb-4 bg-gray-50 rounded-[18px] flex items-center justify-center border border-black/5">
                             <Image 
-                              src="/products/enerzix_500ml.png" 
+                              src="/products/enerzix_500ml_plain.webp" 
                               alt="500ml" 
-                              width={140} height={140} 
-                              className="object-contain transition-transform duration-700 group-hover:scale-110"
+                              width={120} height={120} 
+                              className="object-cover transition-transform duration-700 group-hover:scale-105 rounded-xl"
                             />
                           </div>
                           <div className="text-center">

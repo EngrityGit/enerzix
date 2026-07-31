@@ -43,17 +43,6 @@ export default function WhyEnerzix() {
         }
       });
 
-      // 3. Subtle bottle entrance
-      gsap.from(bottleRef.current, {
-        scale: 0.9,
-        opacity: 0,
-        duration: 1.5,
-        ease: "expo.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 60%",
-        }
-      });
     }, sectionRef);
 
     return () => ctx.revert();

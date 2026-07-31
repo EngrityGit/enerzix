@@ -1,45 +1,11 @@
 'use client';
 
-import { useLayoutEffect, useRef } from 'react';
-import { gsap } from '@/lib/gsap';
+import {useRef } from 'react';
 import Container from '@/components/ui/Container';
 
 export default function PhilosophySection() {
   const sectionRef = useRef(null);
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      // Create a timeline for the section
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 85%", // Starts animation when section is 85% from top
-          toggleActions: "play none none reverse",
-        }
-      });
-
-      // 1. Animate the text block
-      tl.from(".phi-text", {
-        opacity: 0,
-        y: 20,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.2
-      })
-      // 2. Animate the cards with a stagger (starting slightly before text finishes)
-      .from(".phi-card", {
-        opacity: 0,
-        y: 15,
-        scale: 0.98,
-        duration: 0.6,
-        ease: "back.out(1.2)",
-        stagger: 0.1
-      }, "-=0.4"); 
-
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section ref={sectionRef} className="py-32 bg-[#F8FAFC]">

@@ -114,7 +114,7 @@ export default function ProductHero() {
             className="absolute inset-0 h-[120%] -top-[10%] scale-[1.2]" 
           >
             <Image 
-              src="/products/enerzix_about3.png" 
+              src="/products/enerzix_about3.webp" 
               alt="Premium Hydration"
               fill
               priority
