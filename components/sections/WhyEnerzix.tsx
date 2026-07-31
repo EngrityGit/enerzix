@@ -17,18 +17,7 @@ export default function WhyEnerzix() {
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      // 1. Reveal header and stats
-      gsap.from(".why-header", {
-        y: 20,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 85%",
-        }
-      });
+
 
       // 2. Reveal feature blocks staggered
       gsap.from(".feature-reveal", {
@@ -92,8 +81,8 @@ export default function WhyEnerzix() {
           >
             <div className="relative w-full h-full animate-float">
               <Image 
-                src="/products/enerzix_hero.png" 
-                alt="Enerzix Premium Water"
+                src="/products/enerzix_hero.webp" 
+                alt="Enerzix Pure Water"
                 fill
                 className="object-contain drop-shadow-[0_50px_70px_rgba(0,0,0,0.12)]"
                 priority
