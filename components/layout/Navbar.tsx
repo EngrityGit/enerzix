@@ -3,7 +3,7 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'; // Added for active state
+import { usePathname } from 'next/navigation';
 import { gsap } from '@/lib/gsap';
 import LiquidButton from '../ui/LiquidButton';
 
@@ -23,11 +23,12 @@ const LINKS = [
   { name: 'Home', href: '/' },
   { name: 'Products', href: '/products' },
   { name: 'Our Story', href: '/about' },
+  { name: 'Journal', href: '/blog' }, // Added Journal Link
   { name: 'Wholesale', href: '/wholesale' },
 ];
 
 export default function Navbar() {
-  const pathname = usePathname(); // Get current route
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -96,7 +97,6 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-2 relative z-10">
             {LINKS.map((link) => {
-              // Active state logic: handles exact home match and nested product routes
               const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
 
               return (
@@ -112,7 +112,6 @@ export default function Navbar() {
                       ${isActive ? 'text-[#005FFF]' : primaryColor} hover:!text-[#005FFF]
                     `}
                   >
-                    {/* Active/Hover Pill */}
                     <div className={`absolute inset-0 z-0 rounded-[10px] transition-all duration-300 
                       ${isActive 
                         ? 'opacity-100 scale-100 bg-[#005FFF]/5' 
@@ -130,8 +129,6 @@ export default function Navbar() {
                         </svg>
                       )}
                     </div>
-
-      
                   </Link>
 
                   {link.name === 'Products' && (
