@@ -8,9 +8,9 @@ import { gsap } from '@/lib/gsap';
 const RETAILERS = [
   { name: "Chevron", logo: "/customers/chevron.svg", width: 120 },
   { name: "Panorama", logo: "/customers/panarama.png", width: 140 },
-  { name: "7-Eleven", logo: "/customers/7eleven.svg", width: 80 },
-  { name: "Petro Canada", logo: "/customers/petro.svg", width: 140 },
-  { name: "Shell", logo: "/customers/shell.svg", width: 90 },
+  // { name: "7-Eleven", logo: "/customers/7eleven.svg", width: 80 },
+  // { name: "Petro Canada", logo: "/customers/petro.svg", width: 140 },
+  // { name: "Shell", logo: "/customers/shell.svg", width: 90 },
 ];
 
 const MARQUEE_ITEMS = [...RETAILERS, ...RETAILERS, ...RETAILERS]; // Triple for smoother loop

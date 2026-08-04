@@ -6,6 +6,7 @@ import WhyEnerzix from '@/components/sections/WhyEnerzix';
 import WaterLineup from '@/components/sections/WaterLineup';
 import CTABand from '@/components/sections/CTABand';
 import ProductSpecs500ml from '@/components/product/ProductInformation';
+import FAQSection from '@/components/sections/FAQSection';
 
 export const metadata: Metadata = {
   title: 'Enerzix — The Collection',
@@ -22,6 +23,7 @@ export default function ProductsPage() {
       {/* 4. Glass-morphism Promos & Become a Retailer CTA */}
       <ProductPromos />
       <WhyEnerzix />  
+      <FAQSection page='product'/>
 
       {/* 6. Final Call to Action */}
       <CTABand 

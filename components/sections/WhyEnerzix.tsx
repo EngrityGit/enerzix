@@ -6,7 +6,7 @@ import { gsap } from '@/lib/gsap';
 import Container from '@/components/ui/Container';
 
 const STATS = [
-  { label: 'PH BALANCE', value: '7.4 NEUTRAL' },
+  { label: 'NO MINERALS ', value: '0%' },
   { label: 'NO SUGAR ', value: '0%' },
   { label: 'NO CALORIES', value: '0 CALS' },
 ];

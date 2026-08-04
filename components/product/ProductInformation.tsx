@@ -94,7 +94,7 @@ export default function ProductSpecs500ml() {
           <div className="space-y-20 order-3">
             <div className="callout-item flex flex-col items-start text-left group">
               <p className="text-[10px] font-black text-[#005FFF] uppercase tracking-widest mb-1">Ingredients</p>
-              <h4 className="text-xl font-bold text-[#0A192F] leading-tight mb-3">Pure Purified Water</h4>
+              <h4 className="text-xl font-bold text-[#0A192F] leading-tight mb-3">Purified Water</h4>
               <div className="h-[2px] w-12 bg-[#005FFF]/20 transition-all group-hover:w-20 group-hover:bg-[#005FFF]" />
             </div>
 

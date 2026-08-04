@@ -45,14 +45,6 @@ export default function Product500mlPage() {
       <RetailerMarquee />
       <ProductInformation />
 
-      {/* Details about the 500ml size (The Specs you have) */}
-      <div id="specs">
-        <WaterLineup />
-      </div>
-
-      {/* Why Enerzix (The technical PH/TDS specs) */}
-      <WhyEnerzix />
-
       {/* Delivery / Retailer Cards */}
       <ProductPromos />
 

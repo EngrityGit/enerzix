@@ -57,9 +57,8 @@ export default function ProductHero() {
           ease: "power2.inOut"
         }, 0.1);
 
-      // 3. pH Progress Bar Animation (Triggered when badge becomes visible)
       gsap.to(progressRef.current, {
-        width: "75%",
+        width: "99%",
         duration: 1.5,
         ease: "power2.out",
         scrollTrigger: {
@@ -140,8 +139,8 @@ export default function ProductHero() {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-end">
-                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Alkalinity Index</span>
-                    <span className="text-xs font-bold text-[#005FFF]">7.4 pH</span>
+                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Pure</span>
+                    <span className="text-xs font-bold text-[#005FFF]">100%</span>
                   </div>
                   <div className="h-1.5 w-full bg-slate-200/50 rounded-full overflow-hidden">
                       <div 
@@ -152,7 +151,7 @@ export default function ProductHero() {
                 </div>
                 
                 <p className="text-[9px] font-medium text-slate-500 leading-tight">
-                  Regularly tested for purity and mineral balance in British Columbia.
+                  Regularly tested for purity in British Columbia.
                 </p>
              </div>
           </div>

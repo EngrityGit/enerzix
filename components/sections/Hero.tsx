@@ -112,7 +112,7 @@ export default function Hero() {
         {/* Specs */}
         <div className="hidden sm:block text-right">
           <p className="text-[10px] font-bold tracking-widest text-slate-400 uppercase mb-1">
-            No Minerals| No Sugar | No Calories 
+            No Minerals | No Sugar | No Calories 
           </p>
           <p className="text-slate-700 font-medium text-sm">
             NOW IN 500ML 

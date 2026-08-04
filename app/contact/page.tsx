@@ -16,7 +16,7 @@ export default function ContactPage() {
       <ContactHero />
       <ContactFormSection />
       <ServiceMap />
-      <FAQSection/>
+      <FAQSection page='contact'/>
       <CTABand 
         title={<>Ready to <span className="italic text-[#005FFF]">Transform</span> Your Shelf?</>}
         subtitle="Wholesale Partners"

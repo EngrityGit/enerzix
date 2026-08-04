@@ -64,7 +64,7 @@ export default function Hero500ml() {
               Pure
               <br />
               <span className="italic font-light text-[#005FFF] lowercase">
-                500 mL.
+                500 ml
               </span>
             </h1>
 

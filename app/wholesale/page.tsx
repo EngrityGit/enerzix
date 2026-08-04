@@ -24,7 +24,7 @@ export default function ShopPage() {
       <ShopHero />
       <WholesalePricing/>
       <WholesaleForm/>
-      <FAQSection />
+      <FAQSection page='wholesale'/>
       <CTABand
         title={<>Ready to <span className="italic text-[#005FFF]">Transform</span> Your Shelf?</>}
         subtitle="Wholesale Partners"
