@@ -77,7 +77,7 @@ export default function BlogHero() {
 
             <div className="flex flex-wrap gap-5">
               <LiquidButton
-                href="#articles"
+                href="#blog"
                 text="Read Articles"
                 scrolled={true}
               />
@@ -116,7 +116,7 @@ export default function BlogHero() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <p className="text-[10px] font-black text-[#005FFF] uppercase mb-1">Industry News</p>
+                <p className="text-[10px] font-black text-[#005FFF] uppercase mb-1">Enerzix Journal</p>
                 <p className="text-sm font-bold text-[#0A192F] leading-tight">
                   Logistics across BC, AB & ON.
                 </p>

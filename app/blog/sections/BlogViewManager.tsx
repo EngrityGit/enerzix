@@ -47,7 +47,7 @@ export default function BlogViewManager({ posts }: { posts: any[] }) {
   }, [posts, searchQuery, activeCategory]);
 
   return (
-    <section className="w-full bg-[#F8FAFC] pb-24 min-h-screen">
+    <section className="w-full bg-[#F8FAFC] pb-24 min-h-screen" id='blog'>
       {/* --- STICKY NAV BAR --- */}
       <div className="sticky top-[72px] md:top-[88px] z-40 w-full bg-[#F8FAFC]/95 backdrop-blur-xl border-b border-slate-200/60 transition-all">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 py-4">
