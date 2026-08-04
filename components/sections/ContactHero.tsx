@@ -51,7 +51,7 @@ export default function ContactHero() {
           
           <p className="hero-text opacity-0 text-slate-600 text-lg md:text-xl font-light max-w-xl leading-relaxed will-change-transform">
             Whether you are a boutique hotel, a national retailer, or a local shop, 
-            we provide streamlined logistics for premium glacial water.
+            we provide streamlined logistics for pure & premium water.
           </p>
         </div>
       </Container>
