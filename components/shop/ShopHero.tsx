@@ -55,8 +55,7 @@ export default function ShopHero() {
           
           {/* Description */}
           <p className="hero-desc opacity-0 text-slate-600 text-lg md:text-xl font-light max-w-xl leading-relaxed will-change-transform">
-            Sourced from the deep glacial aquifers of the North. 
-            Select your vessel and experience the vitality of raw water.
+            For clean and refreshing hydration to help you stay refreshed throughout the day.
           </p>
 
         </div>

@@ -79,7 +79,7 @@ export default function LeadGenForm() {
             <h2 className="text-4xl md:text-5xl font-light leading-[1.1] text-slate-900 tracking-tightest mb-8">
               Secure your <br />
               <span className="italic text-[#005FFF]">first allocation</span> of <br />
-              pure & Clean water.
+              pure & clean water
             </h2>
             <p className="text-[16px] leading-relaxed text-slate-500 font-light max-w-sm">
               Join the inner circle for a complimentary introductory case and priority subscription slots.

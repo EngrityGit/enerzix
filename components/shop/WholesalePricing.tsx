@@ -62,7 +62,7 @@ export default function WholesalePricing() {
             The 500ml <span className="text-[#005FFF] italic font-light lowercase">Standard.</span>
           </h2>
           <p className="text-slate-500 max-w-2xl mx-auto font-light">
-            Our signature 500ml vessel, engineered for glacial purity and retail presence. 
+            Our signature 500ml bottles, engineered for effeciency & purity.
             Available in flexible tiers for Canadian partners.
           </p>
         </div>

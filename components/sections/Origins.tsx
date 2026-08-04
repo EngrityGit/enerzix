@@ -84,7 +84,7 @@ export default function Origins() {
               
               {/* Glass Info Badge */}
               <div className="absolute bottom-8 left-8 px-5 py-2.5 rounded-[12px] bg-white/10 backdrop-blur-xl border border-white/20 text-white text-[10px] font-bold tracking-[0.15em] uppercase z-10 pointer-events-none">
-                Canadian Glacier Water Purity
+                Pure Hydration - Every Day
               </div>
             </div>
           </div>
