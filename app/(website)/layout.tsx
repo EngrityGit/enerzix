@@ -27,6 +27,7 @@ const plexMono = IBM_Plex_Mono({
   display: 'swap',
 });
 
+
 const siteUrl = 'https://www.enerzix.ca';
 
 export const metadata: Metadata = {
