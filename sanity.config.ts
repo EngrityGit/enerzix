@@ -13,7 +13,6 @@ export default defineConfig({
   schema,
   plugins: [
     structureTool(),
-require('@tailwindcss/typography'),
     visionTool({ defaultApiVersion: apiVersion }),
   ],
 });

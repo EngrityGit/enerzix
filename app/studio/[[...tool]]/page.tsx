@@ -1,4 +1,10 @@
-import { defineCliConfig } from 'sanity/cli';
-import { dataset, projectId } from '@/sanity/env';
+import { NextStudio } from 'next-sanity/studio';
+import config from '@/sanity.config';
 
-export default defineCliConfig({ api: { projectId, dataset } });
+export const dynamic = 'force-static';
+
+export { metadata, viewport } from 'next-sanity/studio';
+
+export default function StudioPage() {
+  return <NextStudio config={config} />;
+}
