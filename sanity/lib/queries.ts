@@ -3,12 +3,12 @@ import { groq } from 'next-sanity';
 const POST_CARD_FIELDS = /* groq */ `
   _id,
   title,
-  "slug": slug.current,
+  "slug": slug.current, 
   excerpt,
   coverImage,
   publishedAt,
   author,
-  categories
+  "categories": categories[]->title 
 `;
 
 export const ALL_POSTS_QUERY = groq`
