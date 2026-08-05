@@ -46,7 +46,7 @@ const SOCIALS = [
 export default function Footer() {
   const openCookieManager = () => {
     if (typeof window !== 'undefined') {
-      window.dispatchEvent(new Event('open-cookie-manager'));mk
+      window.dispatchEvent(new Event('open-cookie-manager'));
     }
   };
 
