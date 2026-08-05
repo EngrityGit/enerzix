@@ -31,8 +31,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   const title = post.seo?.metaTitle || post.title;
   const description = post.seo?.metaDescription || post.excerpt || '';
+  
+  // SAFETY CHECK: Only generate URL if asset exists
   const ogImageSource = post.seo?.ogImage || post.coverImage;
-  const ogImage = ogImageSource ? urlFor(ogImageSource).width(1200).height(630).url() : undefined;
+  const ogImage = ogImageSource?.asset 
+    ? urlFor(ogImageSource).width(1200).height(630).url() 
+    : undefined;
 
   return {
     title,
@@ -59,17 +63,22 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 const portableTextComponents: PortableTextComponents = {
   types: {
-    image: ({ value }) => (
-      <span className="relative block my-10 aspect-video w-full overflow-hidden rounded-2xl">
-        <Image
-          src={urlFor(value).width(1200).url()}
-          alt={value.alt || ''}
-          fill
-          sizes="(max-width: 768px) 100vw, 800px"
-          className="object-cover"
-        />
-      </span>
-    ),
+    image: ({ value }) => {
+      // SAFETY CHECK: If the PortableText image is missing an asset, don't render it
+      if (!value?.asset) return null;
+
+      return (
+        <span className="relative block my-10 aspect-video w-full overflow-hidden rounded-2xl bg-slate-50">
+          <Image
+            src={urlFor(value).width(1200).url()}
+            alt={value.alt || 'Blog illustration'}
+            fill
+            sizes="(max-width: 768px) 100vw, 800px"
+            className="object-cover"
+          />
+        </span>
+      );
+    },
   },
 };
 
@@ -77,12 +86,17 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const post = await getPost(params.slug);
   if (!post) notFound();
 
+  // SAFETY CHECK for JSON-LD
+  const jsonLdImage = post.coverImage?.asset 
+    ? urlFor(post.coverImage).width(1200).url() 
+    : 'https://www.enerzix.ca/og-fallback.png'; // Provide a static fallback URL
+
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.seo?.metaDescription || post.excerpt,
-    image: post.coverImage ? urlFor(post.coverImage).width(1200).url() : undefined,
+    image: jsonLdImage,
     datePublished: post.publishedAt,
     author: { '@type': 'Person', name: post.author || 'Enerzix Team' },
     publisher: {
@@ -102,7 +116,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             {post.categories[0]}
           </span>
         )}
-        <h1 className="text-4xl md:text-6xl font-black text-[#0A192F] tracking-tighter mt-4 mb-6">
+        <h1 className="text-4xl md:text-6xl font-black text-[#0A192F] tracking-tighter mt-4 mb-6 leading-tight">
           {post.title}
         </h1>
         <div className="flex items-center gap-3 text-sm text-slate-500 mb-12">
@@ -113,7 +127,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </time>
         </div>
 
-        {post.coverImage && (
+        {/* SAFETY CHECK: Only render cover image if asset exists */}
+        {post.coverImage?.asset ? (
           <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-slate-100 mb-12">
             <Image
               src={urlFor(post.coverImage).width(1600).height(900).url()}
@@ -124,9 +139,12 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               className="object-cover"
             />
           </div>
+        ) : (
+          /* OPTIONAL: Render a spacer or a decorative element if there's no image */
+          <div className="h-1 bg-[#005FFF]/10 w-full mb-12 rounded-full" />
         )}
 
-        <div className="prose prose-slate prose-lg max-w-none">
+        <div className="prose prose-slate prose-lg max-w-none prose-headings:font-black prose-headings:tracking-tight prose-a:text-[#005FFF]">
           <PortableText value={post.body} components={portableTextComponents} />
         </div>
       </Container>
