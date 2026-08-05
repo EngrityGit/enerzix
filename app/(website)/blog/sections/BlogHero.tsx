@@ -100,8 +100,8 @@ export default function BlogHero() {
               {/* Main Featured Graphic */}
               <div className="absolute inset-0 rounded-[40px] overflow-hidden border border-white/50 shadow-2xl rotate-3">
                 <Image
-                  src="/products/enerzix_hero.png" // Use a lifestyle or high-quality product shot
-                  alt="Enerzix Editorial"
+                  src="/products/enerzix_lifestyle2.webp"
+                  alt="Enerzix Summer Vibe"
                   fill
                   priority
                   className="object-cover"
@@ -130,7 +130,7 @@ export default function BlogHero() {
                     <div className="w-8 h-8 rounded-full border-2 border-white bg-[#005FFF] flex items-center justify-center text-[10px] text-white font-bold">+</div>
                  </div>
                  <p className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">Community</p>
-                 <p className="text-md font-bold text-[#0A192F]">2.4k Weekly Readers</p>
+                 <p className="text-md font-bold text-[#0A192F]">100 Weekly Readers</p>
               </div>
             </div>
           </div>
