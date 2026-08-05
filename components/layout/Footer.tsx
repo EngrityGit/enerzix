@@ -14,7 +14,7 @@ const LINKS = [
 const SOCIALS = [
   {
     name: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com/enerzixwater?utm_source=qr',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-6">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -25,7 +25,7 @@ const SOCIALS = [
   },
   {
     name: 'Facebook',
-    href: '#',
+    href: 'https://www.facebook.com/share/1LW8CA7fYr/?mibextid=wwXIfr',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-6">
         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
@@ -33,13 +33,11 @@ const SOCIALS = [
     ),
   },
   {
-    name: 'LinkedIn',
-    href: '#',
+    name: 'TikTok',
+    href: 'https://www.tiktok.com/@enerzix.water?_r=1&_t=ZS-98dKounCSQe',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-6">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-        <rect x="2" y="9" width="4" height="12"></rect>
-        <circle cx="4" cy="4" r="2"></circle>
+        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
       </svg>
     ),
   },
@@ -48,7 +46,7 @@ const SOCIALS = [
 export default function Footer() {
   const openCookieManager = () => {
     if (typeof window !== 'undefined') {
-      window.dispatchEvent(new Event('open-cookie-manager'));
+      window.dispatchEvent(new Event('open-cookie-manager'));mk
     }
   };
 
